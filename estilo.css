@@ -1,0 +1,289 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Usando a fonte do Google */
+    margin: 0;
+    padding: 0;
+    /* --- MUDANÇA DARK --- */
+    background-color: #121212; /* Fundo principal bem escuro */
+    color: #e0e0e0; /* Cor do texto principal clara (cinza suave) */
+    line-height: 1.6;
+}
+
+/* Classe utilitária para centralizar o conteúdo */
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    /* --- MUDANÇA DARK --- */
+    background-color: #1e1e1e; /* Fundo das seções (um pouco mais claro que o body) */
+    border: 1px solid #333; /* Borda sutil */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra um pouco mais forte */
+}
+
+.container p {
+    text-align: justify;
+}
+
+/* --- Cabeçalho / Navbar --- */
+.navbar {
+    /* --- MUDANÇA DARK --- */
+    background-color: #1e1e1e; /* Mesmo fundo das seções */
+    border-bottom: 1px solid #333; /* Linha sutil de separação */
+    color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent; /* Tira o fundo da classe .container */
+    box-shadow: none;
+    border: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar .logo {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+.navbar nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav li {
+    margin-left: 20px;
+}
+
+.navbar nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Cor de destaque (pode ser um azul mais vibrante, ou outra cor) */
+.navbar nav a:hover {
+    color: #00AFFF; /* Azul vibrante (neon) */
+}
+
+/* --- Seção Sobre Mim --- */
+#sobre-mim {
+    text-align: center;
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* --- MUDANÇA DARK --- */
+    border: 3px solid #00AFFF; /* Borda azul vibrante */
+    margin-bottom: 20px;
+}
+
+/* --- Seção Projetos (Cards) --- */
+.cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    /* --- MUDANÇA DARK --- */
+    background-color: #2a2a2a; /* Fundo dos cards (pouco mais claro) */
+    border: 1px solid #444; /* Borda sutil */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-links {
+    margin-top: auto; 
+    padding-top: 15px; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    border-color: #00AFFF; /* Destaque na borda ao passar o mouse */
+}
+
+.card h3 {
+    margin-top: 0;
+    /* --- MUDANÇA DARK --- */
+    color: #00AFFF; /* Cor de destaque para títulos */
+}
+
+.card a {
+    text-decoration: none;
+    /* --- MUDANÇA DARK --- */
+    background-color: #00AFFF; /* Fundo do botão */
+    color: #121212; /* Texto escuro para contrastar com o botão claro */
+    font-weight: bold; 
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+    /* --- MUDANÇA DARK --- */
+    background-color: #007BFF; /* Azul um pouco menos vibrante */
+    color: #fff;
+}
+
+/* --- Rodapé / Contato --- */
+.links-contato {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.links-contato a {
+    margin: 0 15px;
+    text-decoration: none;
+    /* --- MUDANÇA DARK --- */
+    color: #00AFFF; /* Cor de destaque para os links */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.links-contato a:hover {
+    text-decoration: underline;
+}
+
+.menu-hamburger {
+    display: none; /* Escondido por padrão no desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* Garante que fique acima do menu */
+}
+
+/* Os 3 traços do ícone */
+.menu-hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* 2. Animação do 'X' (quando o botão tem a classe .ativo) */
+.menu-hamburger.ativo span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-hamburger.ativo span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-hamburger.ativo span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Esconde os links de contato do menu por padrão (no desktop) */
+.menu-principal .link-mobile {
+    display: none;
+}
+
+
+/* 3. A Media Query (Telas de 600px ou menos) */
+@media (max-width: 600px) {
+
+    /* Mostra o botão hambúrguer */
+    .menu-hamburger {
+        display: flex;
+    }
+    
+    /* Ajusta o cabeçalho para ter espaço para o botão */
+    .navbar .container {
+        /* Garante que o logo fique de um lado e o botão do outro */
+        justify-content: space-between; 
+    }
+
+    /* 4. O Menu (Mobile: escondido por padrão) */
+    .menu-principal {
+        position: fixed; /* Fica por cima de tudo */
+        top: 0;
+        right: 0; /* Começa "fora" da tela, à direita */
+        width: 60%; /* Ocupa 80% da largura */
+        height: 100vh; /* Ocupa 100% da altura */
+        background-color: #1e1e1e; /* Mesmo fundo das seções */
+        border-left: 1px solid #333;
+        
+        /* Centraliza os links */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* A Mágica de Esconder/Mostrar */
+        transform: translateX(100%); /* Começa 100% fora da tela */
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000; /* Fica abaixo do 'X', mas acima do resto */
+    }
+
+    /* 5. O Menu (Mobile: quando está ATIVO) */
+    .menu-principal.ativo {
+        transform: translateX(0); /* Volta para a posição 0 (visível) */
+    }
+
+    /* 6. Estilo dos links dentro do menu mobile */
+    .menu-principal ul {
+        flex-direction: column; /* Links em coluna */
+        padding: 0;
+    }
+
+    .menu-principal li {
+        margin: 20px 0; /* Espaçamento entre os links */
+        text-align: center;
+    }
+
+    .menu-principal a {
+        font-size: 1.5rem; /* Fonte maior para facilitar o clique */
+        color: #fff;
+    }
+    .menu-principal a:hover {
+        color: #00AFFF;
+    }
+
+    
+    .menu-principal .link-mobile {
+        display: list-item;
+        width: 100%;
+    }
+
+    /* Esconde os links de navegação da página (Sobre, Projetos, Contato) */
+    .menu-principal .link-desktop {
+        display: none;
+    }
+
+    /* Esconde o divisor, já que não há mais o que dividir */
+    .menu-principal .divisor {
+        display: none;
+    }
+
+    footer#contato {
+        display: none;
+    }
+}
