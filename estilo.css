@@ -147,20 +147,35 @@ body {
     color: #fff;
 }
 
-/* --- Rodapé / Contato --- */
+.links-contato img {
+    width: 40px;  /* Define a largura (ajuste como preferir) */
+    height: 40px; /* Define a altura */
+    vertical-align: middle; /* Alinha melhor na linha */
+    transition: transform 0.2s ease; /* Efeito suave */
+    margin-left: 5px;
+}
+
+.links-contato a:hover img {
+    transform: scale(1.1); /* Aumenta um pouco ao passar o mouse */
+}
+
+footer#contato {
+    text-align: center; 
+}
+
 .links-contato {
     text-align: center;
     padding-top: 20px;
 }
-
+/*
 .links-contato a {
     margin: 0 15px;
     text-decoration: none;
-    /* --- MUDANÇA DARK --- */
-    color: #00AFFF; /* Cor de destaque para os links */
+    
+    color: #00AFFF; 
     font-weight: bold;
     font-size: 18px;
-}
+} */
 
 .links-contato a:hover {
     text-decoration: underline;
@@ -227,7 +242,7 @@ body {
         position: fixed; /* Fica por cima de tudo */
         top: 0;
         right: 0; /* Começa "fora" da tela, à direita */
-        width: 60%; /* Ocupa 80% da largura */
+        width: 30%; /* Ocupa 80% da largura */
         height: 100vh; /* Ocupa 100% da altura */
         background-color: #1e1e1e; /* Mesmo fundo das seções */
         border-left: 1px solid #333;
@@ -252,6 +267,7 @@ body {
     .menu-principal ul {
         flex-direction: column; /* Links em coluna */
         padding: 0;
+        align-items: center;
     }
 
     .menu-principal li {
@@ -263,6 +279,7 @@ body {
         font-size: 1.5rem; /* Fonte maior para facilitar o clique */
         color: #fff;
     }
+
     .menu-principal a:hover {
         color: #00AFFF;
     }
@@ -270,7 +287,7 @@ body {
     
     .menu-principal .link-mobile {
         display: list-item;
-        width: 100%;
+        
     }
 
     /* Esconde os links de navegação da página (Sobre, Projetos, Contato) */
@@ -281,6 +298,11 @@ body {
     /* Esconde o divisor, já que não há mais o que dividir */
     .menu-principal .divisor {
         display: none;
+    }
+
+    .menu-principal .btn_menu {
+        width: 50px;  /* Tamanho menor para o menu mobile */
+        height: 50px;
     }
 
     footer#contato {
