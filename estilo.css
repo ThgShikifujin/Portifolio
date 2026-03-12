@@ -110,6 +110,28 @@ body {
     flex-direction: column;
 }
 
+/* 1. Estado normal da imagem */
+.card-img {
+    width: 100%;            /* Ocupa a largura original do card */
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 1px solid #444;
+    
+    /* ESSENCIAL: Prepara a suavidade e a posição */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;     /* Permite usar o z-index */
+    z-index: 1;             /* Fica na camada normal */
+}
+
+/* 2. Efeito apenas ao passar o mouse NA IMAGEM */
+.card-img:hover {
+    transform: scale(2);  /* Aumenta em 40% (ajuste conforme o gosto) */
+    z-index: 100;           /* Joga a imagem para a frente de textos e botões */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Sombra para dar profundidade */
+    border-color: #00AFFF;  /* Opcional: destaca a borda ao expandir */
+}
+
 .card-links {
     margin-top: auto; 
     padding-top: 15px; 
@@ -307,5 +329,14 @@ footer#contato {
 
     footer#contato {
         display: none;
+    }
+
+    .card-img:hover {
+        /* No celular, um zoom de 2x é muito. 
+           Vamos baixar para algo que não ultrapasse a tela, como 1.1 ou 1.2 */
+        transform: scale(1.2); 
+        
+        /* Opcional: Centraliza o zoom para garantir que não corte nas bordas */
+        transform-origin: center; 
     }
 }
