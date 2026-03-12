@@ -18,6 +18,7 @@ body {
     border: 1px solid #333; /* Borda sutil */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra um pouco mais forte */
+    overflow-x: hidden; /* Isso "tranca" o site horizontalmente, impedindo a rolagem lateral */
 }
 
 .container p {
@@ -329,6 +330,13 @@ footer#contato {
 
     footer#contato {
         display: none;
+    }
+
+    /* 2. Para telas médias (Tablets ou janelas menores no PC) */
+    @media (max-width: 1024px) {
+        .card-img:hover {
+            transform: scale(1.5); /* Reduzimos um pouco para não estourar */
+        }
     }
 
     .card-img:hover {
