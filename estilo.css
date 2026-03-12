@@ -6,6 +6,7 @@ body {
     background-color: #121212; /* Fundo principal bem escuro */
     color: #e0e0e0; /* Cor do texto principal clara (cinza suave) */
     line-height: 1.6;
+    overflow-x: hidden; /* Isso "tranca" o site horizontalmente, impedindo a rolagem lateral */
 }
 
 /* Classe utilitária para centralizar o conteúdo */
@@ -18,7 +19,7 @@ body {
     border: 1px solid #333; /* Borda sutil */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra um pouco mais forte */
-    overflow-x: hidden; /* Isso "tranca" o site horizontalmente, impedindo a rolagem lateral */
+
 }
 
 .container p {
@@ -332,19 +333,20 @@ footer#contato {
         display: none;
     }
 
-    /* 2. Para telas médias (Tablets ou janelas menores no PC) */
-    @media (max-width: 1024px) {
-        .card-img:hover {
-            transform: scale(1.5); /* Reduzimos um pouco para não estourar */
-        }
-    }
-
     .card-img:hover {
-        /* No celular, um zoom de 2x é muito. 
-           Vamos baixar para algo que não ultrapasse a tela, como 1.1 ou 1.2 */
+         /* No celular, um zoom de 2x é muito. 
+        Vamos baixar para algo que não ultrapasse a tela, como 1.1 ou 1.2 */
         transform: scale(1.2); 
-        
-        /* Opcional: Centraliza o zoom para garantir que não corte nas bordas */
+            
+            /* Opcional: Centraliza o zoom para garantir que não corte nas bordas */
         transform-origin: center; 
     }
+    
 }
+
+/* 2. Para telas médias (Tablets ou janelas menores no PC) */
+    @media (max-width: 1024px) {
+        .card-img:hover {
+            transform: scale(1.2); /* Reduzimos um pouco para não estourar */
+        }
+    }
